@@ -18,7 +18,10 @@ router.get('/login',(req,res)=>{
     res.render('login')
 })
 
-//login post
+router.get('/register',(req,res)=>{
+    res.render('register')
+})
+
 router.post('/register', async (req, res) => {
     const user = new User({
         userID: req.body.userID,
