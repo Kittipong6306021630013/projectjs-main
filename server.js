@@ -6,10 +6,11 @@ const router = require('./routes/myRouter')
 const mongoose = require('mongoose')
 const app = express()
 
-const DATABASE_URL = process.env.DATABASE_URL
-mongoose.connect( DATABASE_URL,{
-  useNewUrlParser : true,
-  useUnifiedTopology : true
+
+mongoose.connect( process.env.DATABASE_URL,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true 
 })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
